@@ -305,9 +305,9 @@ gulp.task( 'generate-favicon', function( done )
 // as is or refactor your existing HTML pipeline.
 gulp.task( 'inject-favicon-markups', function()
 {
-    return gulp.src( [ `${sourceFolder}/**/*.html` ],
+    return gulp.src( [ `${buildFolder}/**/*.html` ],
         {
-            base: sourceFolder
+            base: buildFolder
         } )
         .pipe( realFavicon.injectFaviconMarkups( JSON.parse( fs.readFileSync( FAVICON_DATA_FILE ) ).favicon.html_code ) )
         .pipe( gulp.dest( buildFolder ) );
