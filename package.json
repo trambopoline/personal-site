@@ -26,12 +26,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ddodson5/ddodson5.github.io.git"
+    "url": "git+https://github.com/trambopoline/personal-site.git"
   },
   "author": "Devin",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ddodson5/ddodson5.github.io/issues"
+    "url": "https://github.com/trambopoline/personal-site/issues"
   },
-  "homepage": "https://github.com/ddodson5/ddodson5.github.io#readme"
+  "homepage": "https://github.com/trambopoline/personal-site#readme"
 }
