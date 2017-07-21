@@ -1,0 +1,37 @@
+{
+  "name": "devindodson.com",
+  "version": "1.0.0",
+  "description": "My personal website",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "del": "^3.0.0",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-cache": "^0.4.6",
+    "gulp-compile-handlebars": "^0.6.1",
+    "gulp-hb": "^6.0.2",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-real-favicon": "^0.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.2",
+    "run-sequence": "^2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddodson5/ddodson5.github.io.git"
+  },
+  "author": "Devin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ddodson5/ddodson5.github.io/issues"
+  },
+  "homepage": "https://github.com/ddodson5/ddodson5.github.io#readme"
+}

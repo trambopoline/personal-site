@@ -1,0 +1,6 @@
+node_modules/
+build/
+resources/
+*.sublime-project
+*.sublime-workspace
+*.todo
