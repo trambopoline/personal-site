@@ -37,9 +37,9 @@ gulp.src = function()
 };
 
 
-/*******************************
- *    Building and Watching    *
- *******************************/
+/*****************************************
+ *    Building, watching, and serving    *
+ *****************************************/
 
 // Run the usual dev tasks, file watchers, and browsersync.
 gulp.task( 'default', function()
@@ -52,7 +52,7 @@ gulp.task( 'default', function()
         'watch' );
 } );
 
-// "quick" build; doesn't generate favicon data, since it is time-consuming and rarely changes.
+// "quick" build; doesn't generate favicon data, since it is time-consuming and shouldn't need to be updated much.
 gulp.task( 'build', function()
 {
     return runSequence(
@@ -60,7 +60,6 @@ gulp.task( 'build', function()
         'mirror', [ 'sass', 'handlebars' ],
         'autoprefixer',
         'inject-favicon-markups'
-
     );
 } );
 
