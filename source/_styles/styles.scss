@@ -96,6 +96,7 @@ body
 	.primary-content
 	{
 		flex: 0 1 40em;
+		font-size: 1.25em;
 		// box-shadow: 7px 4px 13px -9px rgba(0, 0, 0, 0.13), -7px 4px 13px -9px rgba(0, 0, 0, 0.13);
 
 		.container
@@ -119,9 +120,10 @@ body
 		flex-direction: column;
 		padding: .5em 1em .5em 1em;
 		border-radius: 1em 1em 0 0;
-		box-shadow: 7px 4px 13px -9px rgba(0, 0, 0, 0.13), -7px 4px 13px -9px rgba(0, 0, 0, 0.13);
+		// box-shadow: 7px 4px 13px -9px rgba(0, 0, 0, 0.13), -7px 4px 13px -9px rgba(0, 0, 0, 0.13);
+		box-shadow: 2px 7px 20px 0px rgba(0, 0, 0, 0.15), -7px 2px 20px 0px rgba(0, 0, 0, 0.15);
 		// box-shadow: 7px 4px 13px -9px rgba(0, 0, 0, 0.13), -2px 4px 13px -9px rgba(0, 0, 0, 0.13);
-		border: solid $color_light-gray 3px;
+		// border: solid $color_light-gray 3px;
 		border-bottom: none;
 		// background: $color_1;
 		@media screen and ( max-width: $break-large )
@@ -381,7 +383,7 @@ body
 			a
 			{
 				transition: $transition-fastest;
-				font-size: 1.5em;
+				font-size: 1.25em;
 				font-weight: 200;
 				display: flex;
 				align-items: center;
@@ -497,7 +499,7 @@ body
 
 	p
 	{
-		font-size: 1.5em;
+		font-size: 1.25em;
 	}
 
 	#slide-in-1
