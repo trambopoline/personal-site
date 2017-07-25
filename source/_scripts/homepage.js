@@ -52,7 +52,7 @@ function homepageLogic()
 
 	function getTimeGreeting( currentTime )
 	{
-		const appropriateGreeting = "Hi there!";
+		let appropriateGreeting = "Hi there!";
 
 		/*	Setting a time window that bridges between days (e.g., 11:59 PM to 12:30 AM)
 		 	will short-circuit the date comparison later, so watch out for that.
