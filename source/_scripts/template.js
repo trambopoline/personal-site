@@ -16,15 +16,15 @@ else
 function templateLogic()
 {
 	// Ensure we have an up-to-date copyright year in the footer
-	var date = new Date;
-	var copyrightYear = document.getElementById( "current-year" );
+	let date = new Date;
+	let copyrightYear = document.getElementById( "current-year" );
 	if ( copyrightYear !== undefined )
 	{
 		document.getElementById( "current-year" ).innerHTML = date.getFullYear();
 	}
 
 	// Expandable attribution area
-	var attributionExpando = document.getElementById( "attribution-heading" );
+	let attributionExpando = document.getElementById( "attribution-heading" );
 	if ( attributionExpando !== undefined )
 	{
 		attributionExpando.addEventListener( 'click', function( event )
@@ -36,8 +36,8 @@ function templateLogic()
 			else
 			{
 				// For IE9
-				var classes = attributionExpando.className.split( " " );
-				var i = classes.indexOf( "active" );
+				const classes = attributionExpando.className.split( " " );
+				let i = classes.indexOf( "active" );
 
 				if ( i >= 0 )
 					classes.splice( i, 1 );

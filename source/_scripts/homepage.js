@@ -15,7 +15,7 @@ else
 
 function homepageLogic()
 {
-	var date = new Date,
+	let date = new Date,
 		slideIn_1 = document.getElementById( "slide-in-1" ),
 		slideIn_2 = document.getElementById( "slide-in-2" ),
 		slideIn_3 = document.getElementById( "slide-in-3" ),
@@ -52,12 +52,12 @@ function homepageLogic()
 
 	function getTimeGreeting( currentTime )
 	{
-		var appropriateGreeting = "Hi!";
+		const appropriateGreeting = "Hi there!";
 
 		/*	Setting a time window that bridges between days (e.g., 11:59 PM to 12:30 AM)
 		 	will short-circuit the date comparison later, so watch out for that.
 		*/
-		var greetings = {
+		const greetings = {
 			"morning":
 			{
 				"start": "04:31 AM",
@@ -84,11 +84,11 @@ function homepageLogic()
 			}
 		}
 
-		for( var greeting in greetings )
+		for( let greeting in greetings )
 		{
 			// I don't need the date for this computation, but it's required by the JavaScript Date constructor
-			var start = new Date( currentTime.toDateString() + " " + greetings[ greeting ].start );
-			var end = new Date( currentTime.toDateString() + " " + greetings[ greeting ].end );
+			const start = new Date( currentTime.toDateString() + " " + greetings[ greeting ].start );
+			const end = new Date( currentTime.toDateString() + " " + greetings[ greeting ].end );
 
 			// console.debug( greeting, " : ", "starts at ", start, ", and ends at ", end );
 			if( currentTime >= start && currentTime <= end )

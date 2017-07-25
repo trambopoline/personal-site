@@ -17,6 +17,7 @@ const gulp = require( 'gulp' ),
     rename = require( 'gulp-rename' ),
     shell = require( 'child_process' ),
     browserSync = require( 'browser-sync' ).create(),
+    babel = require( 'gulp-babel' ),
     sourceFolder = 'source',
     buildFolder = 'build',
     FAVICON_DATA_FILE = `./${sourceFolder}/faviconData.json`; // Favicon configuration file
@@ -44,9 +45,9 @@ gulp.src = function()
 // Run the usual dev tasks, file watchers, and browsersync.
 gulp.task( 'default', function()
 {
-    runSequence( 'mirror', [ 'sass',
-            'handlebars'
-        ],
+    runSequence(
+        'mirror',
+        [ 'sass', 'handlebars', 'babel' ],
         'autoprefixer',
         'browserSync',
         'watch' );
@@ -57,7 +58,7 @@ gulp.task( 'build', function()
 {
     return runSequence(
         'clean',
-        'mirror', [ 'sass', 'handlebars' ],
+        'mirror', [ 'sass', 'handlebars', 'babel' ],
         'autoprefixer',
         'inject-favicon-markups'
     );
@@ -68,7 +69,7 @@ gulp.task( 'full-build', function()
 {
     runSequence(
         'full-clean',
-        'mirror', [ 'sass', 'generate-favicon', 'handlebars' ],
+        'mirror', [ 'sass', 'generate-favicon', 'handlebars', 'babel' ],
         'autoprefixer',
         'inject-favicon-markups'
 
@@ -81,7 +82,7 @@ gulp.task( 'watch', function()
     gulp.watch( `${sourceFolder}/**/*`, function()
     {
         runSequence(
-            'mirror', [ 'sass', 'handlebars' ],
+            'mirror', [ 'sass', 'handlebars', 'babel' ],
             'autoprefixer',
             'browserSync-updateStream'
 
@@ -132,6 +133,25 @@ gulp.task( 'full-clean', function()
  *    Individual build/optimization tasks    *
  *********************************************/
 
+ // Mirror some source folder assets to build folder
+ gulp.task( 'mirror', function()
+ {
+     return gulp.src( [ `${sourceFolder}/**/*`,
+             `!${sourceFolder}/initial-logo-2_optimized.svg`,
+             `!${sourceFolder}/**/*.js`,
+             `!${sourceFolder}/**/*.scss`,
+             `!${sourceFolder}/**/*.hbs`,
+             `!${sourceFolder}/_templates`,
+             `!${sourceFolder}/_templates/**/*`,
+             `!${sourceFolder}/**/*.json`,
+         ],
+         {
+             base: sourceFolder,
+             dot: true
+         } )
+         .pipe( gulp.dest( buildFolder ) );
+ } );
+
 //https://github.com/shannonmoeller/gulp-hb
 gulp.task( 'handlebars', function()
 {
@@ -151,6 +171,16 @@ gulp.task( 'handlebars', function()
         } ) )
         .pipe( gulp.dest( buildFolder ) );
     // .pipe( browserSync.stream() );
+} );
+
+gulp.task( 'babel', function()
+{
+    return gulp.src( `${sourceFolder}/**/*.js` )
+        .pipe( babel(
+        {
+            presets: [ 'es2015' ]
+        }))
+        .pipe( gulp.dest( buildFolder ) );
 } );
 
 // Sassy
@@ -193,26 +223,6 @@ gulp.task( 'useref', function()
         .pipe( gulpIf( '*.css', cssnano() ) )
         .pipe( gulp.dest( buildFolder ) );
 } );
-
-// Mirror source folder structure to build folder
-gulp.task( 'mirror', function()
-{
-    return gulp.src( [ `${sourceFolder}/**/*`,
-            `!${sourceFolder}/initial-logo-2_optimized.svg`,
-            `!${sourceFolder}/**/*.scss`,
-            `!${sourceFolder}/**/*.hbs`,
-            `!${sourceFolder}/_templates`,
-            `!${sourceFolder}/_templates/**/*`,
-            `!${sourceFolder}/**/*.json`,
-        ],
-        {
-            base: sourceFolder,
-            dot: true
-        } )
-        .pipe( gulp.dest( buildFolder ) );
-} );
-
-
 
 /******************************************************************
  * Gulp FAVICON code generated at http://realfavicongenerator.net *
