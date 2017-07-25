@@ -1,6 +1,19 @@
 'use strict'
 
-document.addEventListener( 'DOMContentLoaded', function()
+/* Ensure the script fires even if the DOM is already loaded */
+if ( document.readyState !== "loading" )
+{
+	homepageLogic();
+}
+else
+{
+	document.addEventListener( 'DOMContentLoaded', function()
+	{
+		homepageLogic();
+	} );
+}
+
+function homepageLogic()
 {
 	var date = new Date,
 		slideIn_1 = document.getElementById( "slide-in-1" ),
@@ -27,7 +40,7 @@ document.addEventListener( 'DOMContentLoaded', function()
 			peek_1.classList.remove( "peek" );
 		}, true );
 	}
-	
+
 	/*	INTRO ANIMATION FUN */
 	slideIn_1.classList.add( "slide-from-right" );
 	slideIn_2.classList.add( "slide-from-left" );
@@ -89,4 +102,4 @@ document.addEventListener( 'DOMContentLoaded', function()
 		return appropriateGreeting;
 
 	}
-} );
+}
