@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /* Ensure the script fires even if the DOM is already loaded */
 if ( document.readyState !== "loading" )
