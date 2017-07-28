@@ -62,25 +62,25 @@ function homepageLogic()
 			{
 				"start": "04:31 AM",
 				"end": "11:59 AM",
-				"message": "Good morning!"
+				"message": "Good Morning!"
 			},
 			"afternoon":
 			{
 				"start": "12:00 PM",
 				"end": "05:30 PM",
-				"message": "Good afternoon!"
+				"message": "Good Afternoon!"
 			},
 			"evening":
 			{
 				"start": "05:31 PM",
 				"end": "11:59 PM",
-				"message": "Good evening!"
+				"message": "Good Evening!"
 			},
 			"night":
 			{
 				"start": "12:00 AM",
 				"end": "04:30 AM",
-				"message": "A spooky nighttime greeting to you!"
+				"message": "A Spooky Nighttime Greeting to You!"
 			}
 		}
 
