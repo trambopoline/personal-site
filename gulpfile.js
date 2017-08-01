@@ -175,7 +175,7 @@ gulp.task( 'handlebars', function()
 
 gulp.task( 'babel', function()
 {
-    return gulp.src( `${sourceFolder}/**/*.js` )
+    return gulp.src( [ `${sourceFolder}/**/*.js`, `!${sourceFolder}/**/_lib/**/*` ] )
         .pipe( babel(
         {
             presets: [ 'es2015' ]
@@ -186,7 +186,7 @@ gulp.task( 'babel', function()
 // Sassy
 gulp.task( 'sass', function()
 {
-    return gulp.src( `${sourceFolder}/**/*.scss`,
+    return gulp.src( [`${sourceFolder}/**/*.scss`, `!${sourceFolder}/**/_lib/**/*` ],
         {
             base: sourceFolder
         } )
@@ -198,7 +198,7 @@ gulp.task( 'sass', function()
 // Run autoprefixer on the build files in-place
 gulp.task( 'autoprefixer', function()
 {
-    return gulp.src( [ `${buildFolder}/**/*.css`, `!${buildFolder}/_styles/normalize.css` ],
+    return gulp.src( [ `${buildFolder}/**/*.css`, `!${buildFolder}/**/_lib/**/*` ],
         {
             base: buildFolder
         } )
