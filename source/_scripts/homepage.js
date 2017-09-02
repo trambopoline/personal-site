@@ -19,6 +19,7 @@ function homepageLogic()
 		slideIn_1 = document.getElementById( "slide-in-1" ),
 		slideIn_2 = document.getElementById( "slide-in-2" ),
 		slideIn_3 = document.getElementById( "slide-in-3" ),
+		// slideUp_1 = document.getElementById( "hero-button" ),
 		peek_1 = document.getElementById( "peek-1" ),
 		siteLogo = document.getElementById( "site-logo" ),
 		eye_left = document.getElementById( "eye-left" ),
@@ -26,12 +27,12 @@ function homepageLogic()
 		timeHeading = slideIn_1;
 
 	// Display a greeting that is dependent on the time of day
-	if( timeHeading !== undefined )
+	if( timeHeading )
 	{
 		timeHeading.innerHTML = getTimeGreeting( date );
 	}
 
-	if( peek_1 !== undefined )
+	if( peek_1 )
 	{
 		// Return Octocat to his starting location when the user scrolls
 		document.addEventListener( "scroll", function()
@@ -42,13 +43,25 @@ function homepageLogic()
 	}
 
 	/*	INTRO ANIMATION FUN */
-	slideIn_1.classList.add( "slide-from-right" );
-	slideIn_2.classList.add( "slide-from-left" );
-	slideIn_3.classList.add( "slide-from-right" );
-	siteLogo.classList.add( "fade-in" );
-	peek_1.classList.add( "peek" );
-	eye_left.classList.add( "blink" );
-	eye_right.classList.add( "blink" );
+	addClass( slideIn_1, "slide-from-right" );
+	addClass( slideIn_2, "slide-from-left" );
+	addClass( slideIn_3, "slide-from-right" );
+	// addClass( slideUp_1, "slideUp" );
+	addClass( peek_1, "peek" );
+	addClass( eye_left, "blink" );
+	addClass( eye_right, "blink" );
+	addClass( siteLogo, "fade-in" );
+
+	function addClass( element, classToAdd )
+	{
+		try
+		{
+			element.classList.add( classToAdd );
+		}
+		catch(error)
+		{
+		}
+	}
 
 	function getTimeGreeting( currentTime )
 	{
@@ -67,7 +80,7 @@ function homepageLogic()
 			"afternoon":
 			{
 				"start": "12:00 PM",
-				"end": "05:30 PM",
+				"end": "05:31 PM",
 				"message": "Good Afternoon!"
 			},
 			"evening":

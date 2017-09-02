@@ -70,4 +70,48 @@ function templateLogic()
 
 		}, false );
 	}
+
+	// Navbar collapser
+	let navbarCollapser = document.getElementById( "navbar-collapser" );
+	let navbarWrapper = document.getElementById( "navbar-wrapper" );
+	if ( navbarCollapser !== undefined )
+	{
+		navbarCollapser.addEventListener( 'click', function( event )
+		{
+			if ( navbarCollapser.classList )
+			{
+				navbarCollapser.classList.toggle( "collapsed" );
+			}
+			else
+			{
+				// For IE9
+				const classes = navbarCollapser.className.split( " " );
+				let i = classes.indexOf( "collapsed" );
+
+				if ( i >= 0 )
+					classes.splice( i, 1 );
+				else
+					classes.push( "collapsed" );
+				navbarCollapser.className = classes.join( " " );
+			}
+
+			if ( navbarWrapper.classList )
+			{
+				navbarWrapper.classList.toggle( "collapsed" );
+			}
+			else
+			{
+				// For IE9
+				const classes = navbarWrapper.className.split( " " );
+				let i = classes.indexOf( "collapsed" );
+
+				if ( i >= 0 )
+					classes.splice( i, 1 );
+				else
+					classes.push( "collapsed" );
+				navbarWrapper.className = classes.join( " " );
+			}
+
+		}, false );
+	}
 }

@@ -138,7 +138,7 @@ gulp.task( 'full-clean', function()
  {
      return gulp.src( [ `${sourceFolder}/**/*`,
              `!${sourceFolder}/initial-logo-2_optimized.svg`,
-             `!${sourceFolder}/**/*.js`,
+             `!${sourceFolder}/_scripts/*.js`,
              `!${sourceFolder}/**/*.scss`,
              `!${sourceFolder}/**/*.hbs`,
              `!${sourceFolder}/_templates`,
