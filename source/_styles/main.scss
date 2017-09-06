@@ -208,7 +208,7 @@ body {
 	.navbar-content
 	{
 
-		line-height: 2rem;
+		// line-height: 2rem;
 
 		a
 		{
@@ -217,6 +217,11 @@ body {
 
 		&.internal-links
 		{
+			li #site-logo
+			{
+				height: 2rem !important;
+				width: 2rem !important;
+			}
 			li
 			{
 				// padding: 0 1em;
@@ -337,6 +342,7 @@ body {
 .wrap
 {
 	margin: 0 $wrap-margin 0 $wrap-margin;
+	position: relative;
 }
 
 .primary-content
@@ -394,6 +400,7 @@ body {
 
 	#slide-in-2 {
 		font-weight: 400;
+		// color: $color_4;
 		position: relative;
 		transform: translateX( -100vw);
 		margin: .67rem 0 .67rem 0;
@@ -784,5 +791,46 @@ a{
 
 	&:hover, &:focus {
 		color: lighten( $color-4, 20%); // text-shadow: 2px 2px 6px rgba(115, 150, 150, 0.6);;
+	}
+}
+
+#about-me
+{
+	.primary-content
+	{
+		padding-top: 20vh;
+		max-width: 40rem;
+	}
+
+
+	li
+	{
+		margin: .5rem 0;
+	}
+
+	h2, h3
+	{
+		text-align: center;
+	}
+	h2
+	{
+		margin-top: 20vh;
+	}
+
+	.fullpage-background
+	{
+	    // background: url(/_images/pasture.jpg);
+	    height: 100%;
+	    width: 100%;
+	    position: fixed;
+	    z-index: -5;
+
+	    .primary-content
+	    {
+	    	max-width: 40rem;
+	    	// background: white;
+	    	height: 100%;
+	    	width: 100%;
+	    }
 	}
 }
