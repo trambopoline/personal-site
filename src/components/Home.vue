@@ -7,9 +7,9 @@
 					<h1 class="subtitle is-3">I'm Devin.</h1>
 					<h1 class="subtitle is-4">I'm mostly a front-end developer, but I also like to take a stroll through the rest of the stack on occasion.</h1>
 					<div class="container has-text-centered">
-						<a class="button is-primary is-inverted is-outlined" href="#projects">Projects</a>
-						<a class="button is-primary is-inverted is-outlined" href="#skills">Skills</a>
-						<a class="button is-primary is-inverted is-outlined" href="#other-stuff">Other Stuff</a>
+						<a class="button is-primary is-inverted is-outlined" data-scroll href="#projects">Projects</a>
+						<a class="button is-primary is-inverted is-outlined" data-scroll href="#skills">Skills</a>
+						<a class="button is-primary is-inverted is-outlined" data-scroll href="#other-stuff">Other Stuff</a>
 					</div>
 				</div>
 			</div>
@@ -24,6 +24,10 @@
 </template>
 
 <script>
+import SweetScroll from 'sweet-scroll';
+
+const scroller = new SweetScroll({/* some options */});
+
 export default {};
 </script>
 
