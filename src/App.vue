@@ -3,7 +3,7 @@
     <router-view/>
     <section class="footer">
       <div class="container has-text-centered">
-      Copyright © 2018 - Devin Dodson - All Rights Reserved
+      Copyright © {{new Date().getFullYear() || "2018" }} - Devin Dodson - All Rights Reserved
     </div>
     </section>
   </div>
