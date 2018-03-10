@@ -1,6 +1,8 @@
 # devindodson.com
 
-> My personal site
+My personal site, created with Vue-Loader
+
+Staging visible here: https://dodson-staging.netlify.com/
 
 ## Build Setup
 
