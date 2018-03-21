@@ -1,55 +1,68 @@
 <template>
-   <div class="card bm--card-equal-height">
-            <header class="card-header">
-              <div class="card-header-title project-hero">
-                <span class="icon is-large has-text-primary">
-                  <i :class="['fa fa-3x fa-' + icon]"></i>
-                </span>
-              </div>
-            </header>
-            <div class="card-content">
-              <div class="content">
-                <div class="title">{{title}}</div>
-              </div>
-              <div class="content">
-                {{description}}
-              </div>
-            </div>
-            <footer class="card-footer">
-				<slot>
-					Placeholder
-				</slot>
-            </footer>
-          </div>
+  <div class="card bm--card-equal-height">
+    <header class="card-header">
+      <div class="card-header-title project-hero">
+        <span class="icon is-large has-text-primary">
+          <i :class="['fa fa-3x fa-' + icon]"></i>
+        </span>
+      </div>
+    </header>
+    <div class="card-content">
+      <div class="content">
+        <div class="title">{{title}}</div>
+      </div>
+      <div class="content">
+        {{description}}
+      </div>
+    </div>
+    <footer class="card-footer">
+      <a class="card-footer-button card-footer-item is-primary is-inverted" target="_blank" :href="button1Link">
+        <span>{{button1Text}}</span>
+        <span class="icon ">
+          <i :class="['fa fa-' + button1Icon + ' fa-lg']"></i>
+        </span>
+      </a>
+      <a class="card-footer-button card-footer-item is-primary is-inverted" target="_blank" :href="sourceLink">
+        <span>Source</span>
+        <span class="icon ">
+          <i class="fa fa-code fa-lg"></i>
+        </span>
+      </a>
+    </footer>
+  </div>
 </template>
 
 <script>
 export default {
-	name: "ProjectCard",
-	props: ["icon", "title", "description"]
-}
+  name: "ProjectCard",
+  props: ["icon", "title", "description", "button1Text", "button1Link", "button1Icon", "sourceLink"]
+};
 </script>
 
-<style lang="scss">
+<style scoped lang="scss" >
+
+// @import "~bulma/sass/utilities/_all";
+// @import "~bulma/sass/base/_all";
+// @import "~bulma/sass/elements/_all";
+@import "~bulma/bulma";
+
+.project-hero {
+  justify-content: center;
+}
 
 .bm--card-equal-height {
-   display: flex;
-   flex-direction: column;
-   height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .bm--card-equal-height .card-footer {
-   margin-top: auto;
+  margin-top: auto;
 }
-@import "~bulma/sass/utilities/_all";
-@import "~bulma/sass/base/_all";
-@import '~bulma/sass/elements/_all';
-
-
 
 /* Adding a custom 'card-footer-button that isn't yet supported by Bulma, courtesy of:
 https://codepen.io/timacdonald/pen/bLGXxd
  */
- .card-footer-button {
+.card-footer-button {
   align-items: center;
   background-color: $button-background-color;
   color: $button-color;
@@ -206,6 +219,4 @@ https://codepen.io/timacdonald/pen/bLGXxd
     pointer-events: none;
   }
 }
-
-
 </style>

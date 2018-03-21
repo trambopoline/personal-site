@@ -38,36 +38,24 @@
 		<section class="section container" id="projects">
 			<div class="columns has-text-centered">
 				<div class="column">
-					<ProjectCard icon="chrome" title="New Domain in New Tab" description="A highly configurable Chrome extension to automatically open off-site links in a new tab.">
-						<a class="card-footer-button card-footer-item is-primary is-inverted" target="_blank" href="https://chrome.google.com/webstore/detail/new-domain-in-new-tab/nokdeeoiaiicgnonknihiccadnnmpeoh">
-							<span>Get it for Chrome</span>
-							<span class="icon ">
-								<i class="fa fa-download fa-lg "></i>
-							</span>
-						</a>
-						<a class="card-footer-button card-footer-item is-primary is-inverted" target="_blank" href="https://github.com/trambopoline/new-domain-in-new-tab">
-							<span>Source</span>
-							<span class="icon ">
-								<i class="fa fa-code fa-lg "></i>
-							</span>
-						</a>
-					</ProjectCard>
+					<ProjectCard icon="chrome" 
+								title="New Domain in New Tab" 
+								description="A highly configurable Chrome extension to automatically open off-site links in a new tab."
+								button1Text="Get it for Chrome"
+								button1Link="https://chrome.google.com/webstore/detail/new-domain-in-new-tab/nokdeeoiaiicgnonknihiccadnnmpeoh"
+								button1Icon="download"
+								sourceLink="https://github.com/trambopoline/new-domain-in-new-tab"
+								/>
 				</div>
 				<div class="column">
-					<ProjectCard icon="bomb" title="React Minesweeper" description="A minimalistic minesweeper game with customizable board size and mines.">
-						<a class="card-footer-button card-footer-item is-primary is-inverted" target="_blank" href="https://minesweeper.devindodson.com/">
-							<span>Play it here</span>
-							<span class="icon ">
-								<i class="fa fa-gamepad fa-lg "></i>
-							</span>
-						</a>
-						<a class="card-footer-button card-footer-item is-primary is-inverted" target="_blank" href="https://github.com/trambopoline/react-minesweeper">
-							<span>Source</span>
-							<span class="icon ">
-								<i class="fa fa-code fa-lg "></i>
-							</span>
-						</a>
-					</ProjectCard>
+					<ProjectCard icon="bomb"
+								title="React Minesweeper" 
+								description="A minimalistic minesweeper game with customizable board size and mines."
+								button1Text="Play it here"
+								button1Link="https://minesweeper.devindodson.com/"
+								button1Icon="gamepad"
+								sourceLink="https://github.com/trambopoline/react-minesweeper"
+								/>
 				</div>
 				<div class="column">
 					<div class="box">
@@ -100,9 +88,6 @@ export default {
 <style lang="scss">
 
 
-.project-hero {
-	justify-content: center;
-}
 
 
 
