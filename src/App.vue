@@ -15,13 +15,19 @@ export default {
 };
 </script>
 
-<style>
-/* #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-} */
+<style lang="scss">
+
+@import "~bulma/sass/utilities/initial-variables";
+
+$fuschia: #F012BE;
+$primary: $red;
+
+@import '~bulma/';
+// @import "~bulma/sass/utilities/functions";
+// @import "~bulma/sass/utilities/derived-variables";
+// @import "~bulma/sass/utilities/animations";
+// @import "~bulma/sass/utilities/mixins";
+// @import "~bulma/sass/utilities/controls";
+
+
 </style>
