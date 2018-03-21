@@ -20,14 +20,15 @@ export default {
 @import "~bulma/sass/utilities/initial-variables";
 
 $fuschia: #F012BE;
+
 $primary: $red;
 
-@import '~bulma/';
-// @import "~bulma/sass/utilities/functions";
-// @import "~bulma/sass/utilities/derived-variables";
-// @import "~bulma/sass/utilities/animations";
-// @import "~bulma/sass/utilities/mixins";
-// @import "~bulma/sass/utilities/controls";
+@import "~bulma/sass/utilities/_all";
+@import "~bulma/sass/base/_all";
+@import "~bulma/sass/elements/_all";
+@import "~bulma/sass/components/_all";
+@import "~bulma/sass/grid/_all";
+@import "~bulma/sass/layout/_all";
 
 
 </style>
