@@ -10,6 +10,13 @@
 </template>
 
 <script>
+import FontAwesome from "@fortawesome/fontawesome";
+import FontAwesomeBrands from "@fortawesome/fontawesome-free-brands";
+import FontAwesomeSolid from "@fortawesome/fontawesome-free-solid";
+import FontAwesomeRegular from "@fortawesome/fontawesome-free-regular";
+FontAwesome.library.add(FontAwesomeBrands);
+FontAwesome.library.add(FontAwesomeSolid);
+FontAwesome.library.add(FontAwesomeRegular);
 export default {
   name: "App"
 };
@@ -21,7 +28,7 @@ export default {
 
 $fuschia: #F012BE;
 
-$primary: $red;
+$primary: #7A08FA;
 
 @import "~bulma/sass/utilities/_all";
 @import "~bulma/sass/base/_all";
