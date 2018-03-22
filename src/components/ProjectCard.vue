@@ -3,7 +3,7 @@
     <header class="card-header">
       <div class="card-header-title project-hero">
         <span class="icon is-large has-text-primary">
-          <i :class="['fa fa-3x fa-' + icon]"></i>
+          <i :class="['fa-3x ' + icon]"></i>
         </span>
       </div>
     </header>
@@ -14,18 +14,21 @@
       <div class="content">
         {{description}}
       </div>
+      <div class="content">
+        <slot></slot>
+      </div>
     </div>
-    <footer class="card-footer">
-      <a class="card-footer-button card-footer-item is-primary is-inverted" target="_blank" :href="button1Link">
+    <footer class="card-footer" v-if="button1Link || sourceLink">
+      <a v-if="button1Link" class="card-footer-button card-footer-item is-primary is-inverted" target="_blank" :href="button1Link">
         <span>{{button1Text}}</span>
         <span class="icon ">
-          <i :class="['fa fa-' + button1Icon + ' fa-lg']"></i>
+          <i :class="[button1Icon + '']"></i>
         </span>
       </a>
       <a class="card-footer-button card-footer-item is-primary is-inverted" target="_blank" :href="sourceLink">
         <span>Source</span>
         <span class="icon ">
-          <i class="fa fa-code fa-lg"></i>
+          <i class="fas fa-code"></i>
         </span>
       </a>
     </footer>
@@ -35,12 +38,19 @@
 <script>
 export default {
   name: "ProjectCard",
-  props: ["icon", "title", "description", "button1Text", "button1Link", "button1Icon", "sourceLink"]
+  props: [
+    "icon",
+    "title",
+    "description",
+    "button1Text",
+    "button1Link",
+    "button1Icon",
+    "sourceLink"
+  ]
 };
 </script>
 
 <style scoped lang="scss" >
-
 // @import "~bulma/sass/utilities/_all";
 // @import "~bulma/sass/base/_all";
 // @import "~bulma/sass/elements/_all";
